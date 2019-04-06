@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang='Français'>
+    <head>
+        <link rel="stylesheet" href="fichier.css">
+        <title>Bienvenue sur ma page HTML</title>
+
+        <meta charset="utf-8">
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="https://mauriciopoppe.github.io/function-plot/js/function-plot.js"></script>
+        <script>
+            var b = true;
+            var image = 0;
+            function changeTitle() {
+                var title = document.querySelector("#mainTitle");
+                title.innerHTML += "<br>This new <u>title</u> has been changed from JavaScript!";
+            } 
+            
+            function changeTitleCSSStyle() {
+                    var title = document.querySelector("#mainTitle");
+                    title.style.color = 'black';
+                    title.style.backgroundColor = "yellow";
+                    title.style.border = "5px dashed red";
+                }
+           function cacheTable() {
+                var table = document.querySelector("#formation");
+                if(table.style.visibility == "visible"){
+                    table.style.visibility = "collapse";
+                }else{
+                    table.style.visibility = "visible";
+                }
+            }
+            function cacheTable1() {
+                var table = document.querySelector("#experience");
+                if (table.style.visibility == "visible") {
+                    table.style.visibility = "collapse";
+                } else {
+                    table.style.visibility = "visible";
+                }
+            }
+
+            function changeLang() {
+                var d = document.querySelector("#doumbe");
+                if (b) {
+                    d.innerHTML = "Hello everyone !<br>\
+                    I welcome you to my homepage!<br>\
+                    I am Doumbe TRAORE, student in MIAGE of Nice Sophia Antipolis in France.<br>\
+                    I am also very passionate about sports(football, basketball, badminton)";
+                    b = false;
+                } else {
+                    d.innerHTML = "Bonjour à tous !<br>Je vous souhaite la bienvenue sur ma page d'accueil ! <br>Je suis Doumbe TRAORE, étudiant en MIAGE de Nice Sophia Antipolis en France. <br>Je suis aussi très passionné par le sport (football, basketball, badminton)";
+                    b = true;
+                }
+            }
+
+            function changeImg() {
+                var d = document.querySelector("img");
+                switch(image){
+                    case 0:
+                        d.src="./images/bceao.jpg";
+                        image = (image+ 1) % 7;
+                        break;
+                    case 1:
+                        d.src = "./images/mali-fleuve-niger.jpg";
+                        image = (image + 1) % 7;
+                        break;
+                    case 2:
+                        d.src = "./images/marche.jpg";
+                        image = (image+ 1) % 7;
+                        break;
+                    case 3:
+                        d.src = "./images/marietou.jpg";
+                        image = (image+ 1) % 7;
+                        break;
+                    case 4:
+                        d.src = "./images/monument_paix.jpg";
+                        image = (image + 1) % 7;
+                        break;
+                    case 5:
+                        d.src = "./images/mosquee_djenne.jpg";
+                        image = (image + 1) % 7;
+                        break;
+                    case 6:
+                        d.src = "./images/Tombouctou.jpg";
+                        image = (image + 1) % 7;
+                }
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <h1>Ma page d'accueil</h1>
+        <h2>PROFIL</h2>
+        <p id="doumbe">
+        Bonjour à tous !<br>Je vous souhaite la bienvenue sur ma page d'accueil ! <br>Je suis Doumbe TRAORE, étudiant malien en Master MIAGE de Nice Sophia Antipolis en France. <br>Je suis aussi très passionné par le sport (football, basketball, badminton)
+        </p>
+        <button onclick="changeLang()">Cliquer ici pour traduire</button>
+        <h2>FORMATION SUIVIE</h2> 
+        <button onclick="cacheTable()">Cliquer ici pour voir les formations</button>
+        <table id="formation">
+            <thead>
+                <tr>
+                    <th>Années</th>                    
+                    <th>Formations</th>
+                    <th>Etablissement</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="tableContactBody">
+                <tr>
+                    <td>2019</td>
+                    <td>Master 1 MIAGE</td>
+                    <td>Université Nice Sophia Antipolis</td>
+                    <td>En cours</td>
+                </tr>
+                <tr>
+                    <td>2018</td>
+                    <td>Licence 3 MIAGE</td>
+                    <td>Université Nice Sophia Antipolis</td>
+                    <td>En cours</td>
+                </tr>
+                <tr>
+                    <td>2017</td>
+                    <td>Licence 2 Informatique</td>
+                    <td>Université Nice Sophia Antipolis</td>
+                    <td>En cours</td>
+                </tr>
+                <tr>
+                    <td>2016</td>
+                    <td>Licence 1 Informatique</td>
+                    <td>Université Nice Sophia Antipolis</td>
+                    <td>En cours</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>EXPERIENCES PROFESSIONNELLES</h2>
+        <button onclick="cacheTable1()">Cliquer ici pour voir les expériences professionnelles</button>
+        <table id="experience">
+            <thead>
+                <tr>
+                    <th>Années</th>
+                    <th>Entreprises</th>
+                    <th>Rôles et Tâches</th>
+                </tr>
+            </thead>
+            <tbody id="tableContactBody">
+                <tr>
+                    <td>2018</td>
+                    <td>Projet de fin d'étude</td>
+                    <td>Manupilation d'un PDF en Java</td>
+                </tr>
+                <tr>
+                    <td>2011</td>
+                    <td>Banque Centrale des Etats de L'Afrique de l'Ouest</td>
+                    <td>Administration Réseaux des réseaux et Gestion des Bases de Données
+                    <li>Bases de données : SQL, MSQL</li>
+                    <li>Installation et mise à jour</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2010</td>
+                    <td>Chef d’équipe RAVEC « Recensement Administratif à Vocation d’État Civil »</td>
+                    <td>Chef d’équipe RAVEC « Recensement Administratif à Vocation d’État Civil »
+                    <li>Enregistrement et saisie des données dans la machine</li>
+                    <li>Pilotage et de l’équipe et mise à jour des ordinateurs</li>
+                </tr>
+            </tbody>
+        </table>
+        <p class="funny">Images du MALI</p>
+        <button class="centered" onclick="changeImg()">Cliquer ici pour faire défiler les images</button><br><br>
+        <div id="i">
+            <img class="centered" src="./images/monument_paix.jpg">
+        </div>
+        </body>
+</html>
